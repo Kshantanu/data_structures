@@ -273,8 +273,76 @@ void PrintLevelOrder(Leaf* root)
 
 // Level Order Traversal : Ends
 
+
+/* ----- InOrder and PreOrder Traversal to BTree Creation : Starts ----- */
+
+int SearchPositionInTraversal(int* iTraversal,int iKey, int startIndex, int endIndex)
+{
+	int retVal	=	-1;
+	int i = 0;
+	for(i= startIndex;i<=endIndex;i++)
+	{
+		if(iTraversal[i] == iKey)
+		{
+			retVal	=	i;
+			break;
+		}
+	}
+
+	return retVal;
+}
+
+Leaf* GetTreeFromINandPRETraversal(int *iInOrder,int *iPreOrder, int iIndex, int iLen)
+{
+	static int iMarkerPreOrder	=	0;
+	int iPosition	=	0;
+	Leaf *tempNode = NULL;
+
+	if(iIndex > iLen)
+		return NULL;
+
+	tempNode = GetNode(iPreOrder[iMarkerPreOrder++]);
+
+	if(iIndex == iLen)
+		return tempNode;
+
+	iPosition	=	SearchPositionInTraversal(iInOrder,tempNode->data,iIndex,iLen);
+
+	tempNode->lChild = GetTreeFromINandPRETraversal(iInOrder,iPreOrder,iIndex,iPosition-1);
+	tempNode->rChild = GetTreeFromINandPRETraversal(iInOrder,iPreOrder,iPosition+1,iLen);
+
+
+	return tempNode;
+
+}
+
+Tree* CreateTreeFromInOrderAndPreOrderTraversal(int *iInOrder, int* iPreOrder,int iLen)
+{
+	Tree *BTree = NULL;
+	CreateBinaryTree(&BTree,BINARY_TREE);
+	
+	BTree->root = GetTreeFromINandPRETraversal(iInOrder,iPreOrder,0,iLen);
+	return BTree;
+}
+
+
+/* ----- InOrder and PreOrder Traversal to BTree Creation : Ends ----- */
 void main()
 {
+	/*
+	int InOrder[] = {4,2,5,1,6,3};
+	int PreOrder[] = {1,2,4,5,3,6};
+
+	int iLen	=	sizeof(InOrder)/sizeof(InOrder[0]);
+
+	Tree *BTree = CreateTreeFromInOrderAndPreOrderTraversal(InOrder,PreOrder,iLen-1);
+
+
+	printf("Inorder Traversal is: ");
+	InOrderTraversal(BTree);
+	printf("\n\n");
+
+	
 	Tree *BinaryTree;
 	CreateBinaryTree(&BinaryTree,BINARY_TREE);
 	BinaryTree->root = GetNode(1);
@@ -284,10 +352,10 @@ void main()
     BinaryTree->root->lChild->rChild = GetNode(5);
 	
 
-	//LevelOrderTraversal(BinaryTree->root);
+	LevelOrderTraversal(BinaryTree->root);
 	PrintLevelOrder(BinaryTree->root);
 
-	/*CreateBinarySearchTree(&BinaryTree);
+	CreateBinarySearchTree(&BinaryTree);
 
 	InsertNode(BinaryTree,100);
 
