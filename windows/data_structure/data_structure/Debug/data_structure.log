@@ -1,0 +1,39 @@
+﻿Build started 12/11/2017 11:06:07 AM.
+     1>Project "E:\Project_2017_VS\DataStructures\windows\data_structure\data_structure\data_structure.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\data_structure.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IE:\Project_2017_VS\DataStructures\windows\data_structure\..\..\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\src\queue.c ..\..\..\src\source.c ..\..\..\src\Stack.c ..\..\..\src\tree.c
+         tree.c
+     1>e:\project_2017_vs\datastructures\src\tree.c(222): warning C4033: 'printLeafofLevel' must return a value
+         Stack.c
+         source.c
+         queue.c
+         Generating Code...
+     1>e:\project_2017_vs\datastructures\src\tree.c(230): warning C4716: 'printLeafofLevel' : must return a value
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\data_structure.exe.embed.manifest.res" Debug\data_structure_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Project_2017_VS\DataStructures\windows\data_structure\Debug\data_structure.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\data_structure.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\Project_2017_VS\DataStructures\windows\data_structure\Debug\data_structure.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Project_2017_VS\DataStructures\windows\data_structure\Debug\data_structure.lib" /MACHINE:X86 Debug\data_structure.exe.embed.manifest.res
+         Debug\queue.obj
+         Debug\source.obj
+         Debug\Stack.obj
+         Debug\tree.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\data_structure.exe.embed.manifest" /manifest Debug\data_structure.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\data_structure.exe.embed.manifest.res" Debug\data_structure_manifest.rc 
+       LinkEmbedManifest:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Project_2017_VS\DataStructures\windows\data_structure\Debug\data_structure.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\data_structure.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\Project_2017_VS\DataStructures\windows\data_structure\Debug\data_structure.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Project_2017_VS\DataStructures\windows\data_structure\Debug\data_structure.lib" /MACHINE:X86 Debug\data_structure.exe.embed.manifest.res
+         Debug\queue.obj
+         Debug\source.obj
+         Debug\Stack.obj
+         Debug\tree.obj
+         data_structure.vcxproj -> E:\Project_2017_VS\DataStructures\windows\data_structure\Debug\data_structure.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\data_structure.unsuccessfulbuild".
+         Touching "Debug\data_structure.lastbuildstate".
+     1>Done Building Project "E:\Project_2017_VS\DataStructures\windows\data_structure\data_structure\data_structure.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.39
